@@ -2,7 +2,7 @@
 
 namespace ContactManager.Migrations
 {
-    public partial class ContactManagerMigration : Migration
+    public partial class ContactAppMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -10,13 +10,13 @@ namespace ContactManager.Migrations
                 name: "Contacts",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(maxLength: 40, nullable: false),
-                    LastName = table.Column<string>(maxLength: 40, nullable: false),
-                    Address = table.Column<string>(maxLength: 120, nullable: false),
-                    Email = table.Column<string>(maxLength: 80, nullable: false),
-                    Phone = table.Column<string>(maxLength: 20, nullable: false)
+                    FirstName = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(120)", maxLength: 120, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(80)", maxLength: 80, nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false)
                 },
                 constraints: table =>
                 {
